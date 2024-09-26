@@ -699,7 +699,7 @@ $body-xs-font-size:           $font-size-base * 0.75 !default;  // body xs: 12px
 
 // scss-docs-start font-sizes
 $font-sizes: (
-  0:$h0-font-size
+  0:$h0-font-size,
   1: $h1-font-size,
   2: $h2-font-size,
   3: $h3-font-size,
