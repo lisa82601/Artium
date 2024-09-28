@@ -1,0 +1,31 @@
+//Noto Sans TC
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+//Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.homepage {
+    @media (min-width: 1920px) {
+      $container-max-width: 1856px; // 設置最大寬度
+      $grid-gutter-width: 24px; // gutter 寬度
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+}
+
+.inner-page {
+    @media (min-width: 1920px) {
+      $container-max-width: 1296px; // 設置內頁最大寬度
+      $grid-gutter-width: 24px; // gutter 寬度
+      padding-left: 312px; // margin
+      padding-right: 312px;
+    }
+}
+
+.mobile-page {
+@media (max-width: 576px) {
+    $grid-columns: 4; // 設置手機版欄數
+    $grid-gutter-width: 16px; // gutter 寬度
+    padding-left: 12px;
+    padding-right: 12px;
+}
+}

@@ -2,17 +2,13 @@
 @import './utils/variables';
 @import "../../node_modules/bootstrap";
 
+// API設定檔
+@import'./utils/api';
 
-$utilities: map-merge(
-  $utilities,(
-    "font-size":map-merge(
-        map-get($utilities, "font-size"),
-        (responsive: true,)
-      ),
-  )
-);
 @import "bootstrap/scss/utilities/api";
 
+@import'./base/base';
+@import'./utils/mixin';
 @import './layout/header.scss';
 @import './layout/footer.scss';
 
