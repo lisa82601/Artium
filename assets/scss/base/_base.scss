@@ -13,11 +13,19 @@
 }
 
 .inner-page {
-    @media (min-width: 1920px) {
+    @media (min-width: 1400px) {
       $container-max-width: 1296px; // 設置內頁最大寬度
       $grid-gutter-width: 24px; // gutter 寬度
       padding-left: 312px; // margin
       padding-right: 312px;
+    }
+}
+.inner-page-md {
+    @media (max-width: 1920px) {
+      max-width: 1296px;
+      $grid-gutter-width: 24px; // gutter 寬度
+      padding-left: 32px; // margin
+      padding-right: 32px;
     }
 }
 
@@ -28,4 +36,18 @@
     padding-left: 12px;
     padding-right: 12px;
 }
+}
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    letter-spacing: 0.02em;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }

@@ -1,0 +1,105 @@
+.people-head{
+    width: 32px;
+    height: 32px;
+    border-radius: 1000px;
+}
+.echelon{
+    background-image: url(../images/avatar/avatar5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.tag{
+     padding: 8px;
+     font-weight: 500;
+     font-size: 14px;
+     background: #FFE6CC;
+     color:#67677E ;
+     border-radius: 4px;
+}
+
+.favorite-btn{
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2B2B2B;
+    border-radius: 8px;
+    &:hover{
+        border: 1px solid #4D6AFF;
+        color: #FFFFFF;
+        background: #4D6AFF;
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+            }
+    }
+}
+.btn-check:checked + .favorite-btn, :not(.btn-check) + .favorite-btn:active, .favorite-btn:first-child:active, .favorite-btn.active, .favorite-btn.show{
+    border: 1px solid #4D6AFF;
+    color: #FFFFFF;
+    background: #4D6AFF;
+    
+    .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+    }
+}
+.buy-btn{
+    background: #2B2B2B;
+    &:hover{
+        background: #4D6AFF;
+    }
+    &:active{
+        background: #4D6AFF;
+    }
+}
+.sticky{
+    @include md{
+        top: 48px;
+    }
+}
+::-webkit-scrollbar{display:none;}
+.product-swiper-button-next{
+    border-radius: 8px;
+    padding: 12px;
+    position: absolute;
+    top:50%;
+    right: 100%;
+    background: #2B2B2B;
+    box-shadow: 0px 0px 12px -3px #0000001F;
+    &:hover{
+        background: #4D6AFF;
+    }
+    &:active{
+        background: #4D6AFF;
+    }
+    &:disabled{
+        background: #9F9FAD;
+    }
+}
+.product-swiper-button-prev{
+    border-radius: 8px;
+    padding: 12px;
+    position: absolute;
+    top:50%;
+    right: 100%;
+    background: #2B2B2B;
+    box-shadow: 0px 0px 12px -3px #0000001F;
+    &:hover{
+        background: #4D6AFF;
+    }
+    &:active{
+        background: #4D6AFF;
+    }
+    &:disabled{
+        background: #9F9FAD;
+    }
+}

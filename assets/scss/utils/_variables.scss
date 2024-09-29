@@ -323,7 +323,7 @@ $natural-85: #D5D5DD !default;
 $natural-75: #B9B9C6 !default;
 $natural-65: #9F9FAD !default;
 $natural-55 : #818198 !default;
-$natural-55 : #67677E !default;
+$natural-45 : #67677E !default;
 
 $alpha : $black !default;
 
@@ -353,7 +353,8 @@ $theme-colors: (
   "natural-85": $natural-85,
   "natural-75": $natural-75,
   "natural-65": $natural-65,
-  "natural-55": $natural-55, 
+  "natural-55": $natural-55,
+  "natural-45": $natural-45,
 
   "alpha": $alpha,
 
@@ -459,16 +460,18 @@ $spacers: (
   // 4: $spacer * 1.5,
   // 5: $spacer * 3,
   0: 0,
-  1: $spacer * 0.25, // 2px
-  2: $spacer * 0.5,  // 4px
-  3: $spacer,        // 8px
-  4: $spacer * 1.25, // 10px
-  5: $spacer * 1.5,  // 12px
-  6: $spacer * 3,    // 24px
-  7: $spacer * 4,    // 32px
-  8: $spacer * 5.5,  // 44px
-  9: $spacer * 6,    // 48px
-  10: $spacer * 10,  // 80px
+  1: $spacer * 0.25, // 4px
+  2: $spacer * 0.5,  // 8px
+  3: $spacer * 0.75, // 12px
+  4: $spacer ,        // 16px
+  5: $spacer * 1.25, // 20px
+  6: $spacer * 1.5,  // 24px
+  7: $spacer * 2,    // 32px
+  8: $spacer * 2.5,  // 40px
+  9: $spacer * 3,  // 48px
+  10: $spacer * 4,    // 64px
+  11: $spacer * 4.5,  // 72px
+  12: $spacer * 5,  // 80px
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -489,7 +492,8 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-text-align:           null !default;
-$body-color:                $gray-900 !default;
+// $body-color:                $gray-900 !default;
+$body-color:                $black !default;
 $body-bg:                   $white !default;
 
 $body-secondary-color:      rgba($body-color, .75) !default;
@@ -526,7 +530,8 @@ $icon-link-icon-transform:    translate3d(.25em, 0, 0) !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+// $paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom:   0 !default;
 
 
 // Grid breakpoints
@@ -714,7 +719,8 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
-$headings-margin-bottom:      $spacer * .5 !default;
+// $headings-margin-bottom:      $spacer * .5 !default;
+$headings-margin-bottom:      0 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
 $headings-font-weight:        500 !default;
