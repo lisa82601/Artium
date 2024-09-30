@@ -91,11 +91,13 @@
                   </div>
                 </div>
                 <div class="d-none d-md-block">
-                  <p class="fw-medium text-blue-65 fs-4 fs-md-3 mb-4 mb-md-6">NT$3,200</p>
+                  <p class="fw-medium text-blue-65 fs-4 fs-md-3 mb-4 mb-md-6">NT$ 3,200</p>
                   <div class="d-flex mb-6">
+                    <!-- Button trigger modal -->
                     <div
                       class="py-3 rounded-1 buy-btn me-4 w-100 link-info position-relative d-flex justify-content-center align-items-center">
-                      <a class="d-block stretched-link me-1" href="#">立即購買</a>
+                      <a class="d-block stretched-link me-1" href="#" type="button" data-bs-toggle="modal"
+                        data-bs-target="#buyModal">立即購買</a>
                       <span class="material-symbols-outlined">
                         chevron_right
                       </span>
@@ -114,11 +116,12 @@
             </div>
           </div>
           <div class="fixed-bottom d-md-none bg-info py-4">
-            <p class="fw-medium text-blue-65 fs-4 fs-md-3 mb-4 mb-md-6">NT$3,200</p>
+            <p class="fw-medium text-blue-65 fs-4 fs-md-3 mb-4 mb-md-6">NT$ 3,200</p>
             <div class="d-flex">
               <div
                 class="py-3 rounded-1 buy-btn me-4 w-100 link-info position-relative d-flex justify-content-center align-items-center">
-                <a class="d-block stretched-link me-1" href="#">立即購買</a>
+                <a class="d-block stretched-link me-1" href="#" type="button" data-bs-toggle="modal"
+                  data-bs-target="#buyModal">立即購買</a>
                 <span class="material-symbols-outlined">
                   chevron_right
                 </span>
@@ -127,6 +130,98 @@
               <label class="favorite-btn" for="btn-check"><span class="material-symbols-outlined ">
                   favorite
                 </span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+        <div
+          class="modal-dialog d-flex justify-content-end m-0 max-width-none pe-sm-6 pt-sm-6 modal-dialog-scrollable vh-100 modal-fullscreen-sm-down">
+          <div class="modal-content modal-mw" style=" border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+            <div class=" modal-header py-1 py-md-2 px-4 px-md-6 border-natural-85">
+              <h5 class="modal-title fs-6 fs-md-5" id="buyModalLabel">購物車 </h5>
+              <div class="modal-close ms-auto">
+                <button type="button" class="bg-info border-0" data-bs-dismiss="modal" aria-label="Close"><span
+                    class="material-symbols-outlined">
+                    chevron_right
+                  </span></button>
+              </div>
+            </div>
+            <div class="modal-body p-md-6">
+              <div class="d-flex border-bottom border-natural-85 pb-4 pb-md-6">
+                <div class="modal-card-img me-2 me-md-3">
+                  <img src="../assets/images/product/product10.png" alt="遇見艾蜜莉 #0009">
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="fw-medium fs-8 text-natural-55 mb-2 mb-md-3">By Echelon</span>
+                  <h3 class="fs-6 fs-md-5 mb-2 mb-md-3">遇見艾蜜莉 #0009</h3>
+                  <p class="fw-medium text-blue-65 fs-8 fs-md-7">NT$ 3,200</p>
+                </div>
+                <div class="modal-close ms-auto">
+                  <button type="button" class="btn-close ">
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex border-bottom border-natural-85 pb-4 pb-md-6 pt-4 pt-md-6">
+                <div class="modal-card-img me-2 me-md-3">
+                  <img src="../assets/images/product/product1.png" alt="Hello Meow #0005">
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="fw-medium fs-8 text-natural-55 mb-2 mb-md-3">By Gill WUUUU</span>
+                  <h3 class="fs-6 fs-md-5 mb-2 mb-md-3">Hello Meow #0005</h3>
+                  <p class="fw-medium text-blue-65 fs-8 fs-md-7">NT$ 5,000</p>
+                </div>
+                <div class="modal-close ms-auto">
+                  <button type="button" class="btn-close ">
+                  </button>
+                </div>
+              </div>
+              <div class="text-end pt-4 pt-md-6 pb-8 pb-md-4 border-bottom border-natural-85">
+                <p class="fw-medium text-natural-55 fs-8 fs-md-7 mb-2 mb-md-3"><span class="me-1">共計</span><span
+                    class="me-1">2</span>項作品</p>
+                <p class=" fw-bold fs-6 fs-md-5 text-success"><span class="fw-medium fs-8 fs-md-7 me-1">總計</span><span
+                    class="me-1">NT$</span>8,200</p>
+              </div>
+              <div class="pt-4 pt-md-6">
+                <h4 class="fw-bold text-md-6 mb-4 mb-md-6">付款方式</h4>
+                <form action="" class="mb-2 mb-md-4">
+                  <input type="radio" name="visa" class="btn-check" id="visa-1" autocomplete="off" checked>
+                  <label class="modal-visa-card mb-2 mb-md-4" for="visa-1">
+                    <div class="d-flex flex-column text-center">
+                      <span class="fs-8 fs-md-7 mb-4 fw-bold">國泰世華</span>
+                      <span class="fs-8 fs-md-7 fw-medium">**** **** **** 3033</span>
+                      <div class="visa-btn"></div>
+                    </div>
+                  </label>
+
+                  <input type="radio" name="visa" class="btn-check" id="visa-2" autocomplete="off">
+                  <label class="modal-visa-card" for="visa-2">
+                    <div class="d-flex flex-column text-center">
+                      <span class="fs-8 fs-md-7 mb-4 fw-bold">中國信託</span>
+                      <span class="fs-8 fs-md-7 fw-medium">**** **** **** 6578</span>
+                      <div class="visa-btn"></div>
+                    </div>
+                  </label>
+                </form>
+                <div class="add-visa position-relative">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <span class="material-symbols-outlined me-2">
+                      add
+                    </span>
+                    <a class="fs-8 fs-md-7 fw-medium stretched-link" href="#">新增信用卡 / 金融卡</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0 p-4 p-md-6">
+              <div
+                class="buy-btn py-3 position-relative w-100 d-flex align-items-center justify-content-center rounded-1 m-0">
+                <a class="text-info me-md-1 stretched-link" href="#">確認付款</a>
+                <span class="material-symbols-outlined fs-5 text-info">
+                  chevron_right
+                </span>
+              </div>
             </div>
           </div>
         </div>

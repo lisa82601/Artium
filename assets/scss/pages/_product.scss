@@ -8,6 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    object-fit:cover
 }
 .tag{
      padding: 8px;
@@ -67,39 +68,92 @@
     }
 }
 ::-webkit-scrollbar{display:none;}
-.product-swiper-button-next{
+
+.max-width-none{
+    max-width: none;
+}
+
+.modal-close{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-card-img{
+    width: 56px;
+    height: 56px;
     border-radius: 8px;
-    padding: 12px;
-    position: absolute;
-    top:50%;
-    right: 100%;
-    background: #2B2B2B;
-    box-shadow: 0px 0px 12px -3px #0000001F;
+    overflow: hidden;
+}
+.modal-visa-card{
+    border-radius: 12px;
+    padding: 32px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1F1F3;
+    border: 2px solid #F1F1F3;
     &:hover{
-        background: #4D6AFF;
+            background-color: #E5EAFF;
+            border: 2px solid #E5EAFF;
+            .visa-btn{
+                background-color: #4D6AFF;
+                border: 1px solid #4D6AFF;
+            }
     }
-    &:active{
-        background: #4D6AFF;
-    }
-    &:disabled{
-        background: #9F9FAD;
+    .visa-btn{
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        border: 1px solid #D5D5DD;
+        background-color: white;
+        &::after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 }
-.product-swiper-button-prev{
-    border-radius: 8px;
-    padding: 12px;
-    position: absolute;
-    top:50%;
-    right: 100%;
-    background: #2B2B2B;
-    box-shadow: 0px 0px 12px -3px #0000001F;
+.btn-check:checked + .modal-visa-card, :not(.btn-check) + .modal-visa-card:active, .modal-visa-card:first-child:active, .modal-visa-card.active, .modal-visa-card.show{
+    border: 2px solid #4D6AFF;
+    background-color: #FFFFFF;
+    .visa-btn{
+        background-color: #4D6AFF;
+        border: 1px solid #4D6AFF;
+    }
+  }
+
+.add-visa{
+    padding: 24px 0;
+    text-align: center;
+    border:1px dashed #B9B9C6;
+    border-radius: 12px;
     &:hover{
-        background: #4D6AFF;
+        color: #4D6AFF;
+        border:1px dashed #4D6AFF;
     }
     &:active{
-        background: #4D6AFF;
+        color: #4D6AFF;
+        border:1px dashed #4D6AFF;
     }
-    &:disabled{
-        background: #9F9FAD;
+}
+
+.modal-mw{
+    @include sm-md{
+        max-width: 375px ;
     }
 }
