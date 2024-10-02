@@ -10,6 +10,13 @@
     background-position: center;
     object-fit:cover
 }
+.domino{
+    background-image: url(../images/avatar/avatar1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit:cover
+}
 .tag{
      padding: 8px;
      font-weight: 500;
@@ -40,7 +47,8 @@
             }
     }
 }
-.btn-check:checked + .favorite-btn, :not(.btn-check) + .favorite-btn:active, .favorite-btn:first-child:active, .favorite-btn.active, .favorite-btn.show{
+// 
+.btn-check:checked + .favorite-btn{
     border: 1px solid #4D6AFF;
     color: #FFFFFF;
     background: #4D6AFF;

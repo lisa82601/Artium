@@ -1,0 +1,46 @@
+.black-btn{
+    padding:8px 12px;
+    background: #2B2B2B;
+    color: white;
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background: #4D6AFF;
+    }
+    @include lg{
+        padding: 12px 20px;
+    }
+}
+.follow-btn{
+    padding: 8px 12px;
+    background: #4D6AFF;
+    border: 1px solid #4D6AFF;
+    border-radius: 8px;
+    color: white;
+    &:hover{
+        background: #4D6AFF;
+        border: 1px solid #4D6AFF;
+        color: white;
+    }
+    @include md{
+        padding: 12px 20px;
+    }
+}
+.btn-check-1:checked + .follow-btn{
+    background-color: white;
+    border: 1px solid #D5D5DD;
+    color: #2B2B2B;
+    &:hover{
+        background: #4D6AFF;
+        border: 1px solid #4D6AFF;
+        color: white;
+    }
+}
+.btn-check-1{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product inner page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- google-icon -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -13,9 +14,43 @@
 
 <body class="bg-natural-95">
     <%- include('./layout/header'); -%>
-        <section>
-            <div class="container homepage mobile-page p-md-7 p-3">
-                <div class="rounded-3 user-banner d-flex align-items-end">
+        <!-- Modal -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmModalLabel">提示</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        您確定要取消收藏嗎？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="black-btn" id="confirmUncheck">確定取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmModal-1" tabindex="-1" aria-labelledby="confirmModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmModalLabel">提示</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        您確定要取消關注嗎？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="black-btn" id="confirmUncheck-1">確定取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="bg-info py-3 py-md-7">
+            <div class="container homepage mobile-page">
+                <div class="rounded-3 user-banner d-flex align-items-end ">
                     <div class="container inner-page inner-page-md mobile-page pb-6 pb-md-8 ">
                         <div class="d-flex flex-column flex-lg-row justify-content-between">
                             <div class="d-flex align-items-end mb-4 mb-lg-0">
@@ -50,8 +85,972 @@
                 </div>
             </div>
         </section>
+        <section class="bg-info border-bottom border-natural-85">
+            <div class="container homepage mobile-page">
+                <div class="container inner-page inner-page-md mobile-page px-maxsm-0">
+                    <nav>
+                        <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                            <button class="nav-link active fs-8 fs-md-7 me-4 me-md-6" id="purchasedWorks-tab"
+                                data-bs-toggle="tab" data-bs-target="#purchasedWorks" type="button" role="tab"
+                                aria-controls="purchasedWorks" aria-selected="true">已購作品</button>
+                            <button class="nav-link fs-8 fs-md-7 me-4 me-md-6 " id="myFavorites-tab"
+                                data-bs-toggle="tab" data-bs-target="#myFavorites" type="button" role="tab"
+                                aria-controls="myFavorites" aria-selected="false">我的收藏</button>
+                            <button class="nav-link fs-8 fs-md-7" id="followTheArtist-tab" data-bs-toggle="tab"
+                                data-bs-target="#followTheArtist" type="button" role="tab"
+                                aria-controls="followTheArtist" aria-selected="false">關注藝術家</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container homepage mobile-page py-7 py-md-9">
+                <div class="container inner-page inner-page-md mobile-page px-maxsm-0">
+                    <div class="tab-content " id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="purchasedWorks" role="tabpanel"
+                            aria-labelledby="purchasedWorks-tab">
+                            <h3 class="fw-bold fs-6 fs-md-5 mb-4 mb-md-6">購買作品</h3>
+                            <div class="row gx-4 gx-lg-6 gy-4 gy-6 mb-md-6 mb-4">
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/carousel/carousel2.png" alt="香菇朵朵農莊 #666">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar7.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">GUGU</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">香菇朵朵農莊 #666</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product10.png" alt="遇見艾蜜莉 #0009">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">遇見艾蜜莉 #0009</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    3,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product20.png" alt="芝麻開門 #123">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar7.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">GUGU</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">芝麻開門 #123</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/hero/hero4.png" alt="愛睏 #123">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar6.png" alt="Gill WUUUU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Gill WUUUU</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">愛睏 #123</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.01.01">2024.01.01</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product24.png" alt="仕女圖 #045">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar7.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">GUGU</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">仕女圖 #045</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.01.01">2024.01.01</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product18.png" alt="星空 #0034">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="Echelon"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">星空 #0034</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/carousel/carousel9.png" alt="告別 #5433">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">告別 #5433</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/carousel/carousel6.png" alt="美好夢鄉 #0088">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">美好夢鄉 #0088</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4 d-none d-lg-block">
+                                    <div class="rwd-card">
+                                        <div class="position-relative img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product9.png" alt="中秋 #0003">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="Echelon"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">中秋 #0003</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">購入<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.01.01</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="black-btn">
+                                    <a href="#" class="d-block me-md-1 stretched-link">查看更多</a>
+                                    <span class="material-symbols-outlined">
+                                        chevron_right
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="myFavorites" role="tabpanel" aria-labelledby="myFavorites-tab">
+                            <h3 class="fw-bold fs-6 fs-md-5 mb-4 mb-md-6">我的收藏</h3>
+                            <div class="row gx-4 gx-lg-6 gy-4 gy-6 mb-md-6 mb-4">
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class=" img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product10.png" alt="遇見艾蜜莉 #0009">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">遇見艾蜜莉 #0009</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    3,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-1"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-1"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class="img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/product/product21.png" alt="幾何的你 #1004">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">幾何的你 #1004</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-2"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-2"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class="img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/carousel/carousel5.png" alt="宇宙 #1004">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">宇宙 #1004</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-3"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-3"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class="img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/avatar/avatar12.png" alt="LOVE #1004">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">LOVE #1004</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-4"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-4"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class="img mb-3 mb-md-6 bg-card-7">
+                                            <img src="../assets/images/carousel/carousel9.png" alt="告別 #5433">
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar3.png" alt="tuukzs"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">tuukzs</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">告別 #5433</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    1,200</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-5"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-5"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class=" img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product15.png" alt="卡比巴拉#0055">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">卡比巴拉#0055</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.05.30">2024.05.30</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    500</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-6"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-6"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class=" img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product17.png" alt="沈浸 #3900">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">沈浸 #3900</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.05.30">2024.05.30</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    500</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-7"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-7"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class=" img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product14.png" alt="夢想 #555">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar5.png" alt="GUGU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Echelon</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">夢想 #555</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.05.30">2024.05.30</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    500</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-4 d-none d-lg-block">
+                                    <div class="rwd-card position-relative">
+                                        <div class=" position-absolute favorite-position">
+                                            <input type="checkbox" class="btn-check" id="favorite-checkbox-8"
+                                                autocomplete="off" checked>
+                                            <label class="favorite-btn" for="favorite-checkbox-8"><span
+                                                    class="material-symbols-outlined ">
+                                                    favorite
+                                                </span></label>
+                                        </div>
+                                        <div class=" img mb-3 mb-md-6">
+                                            <img src="../assets/images/product/product1.png" alt="Handsome #1004">
+
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2 mb-md-4">
+                                            <div class="people-head-sm me-2">
+                                                <img src="../assets/images/avatar/avatar6.png" alt="Gill WUUUU"
+                                                    class="object-fit-img align-bottom">
+                                            </div>
+                                            <h5 class="text-natural-55">Gill WUUUU</h5>
+                                        </div>
+                                        <h4 class="fs-7 fs-md-6 mb-3 mb-md-6">Handsome #1004</h4>
+                                        <div
+                                            class="bg-natural-95 p-2 p-md-4 d-flex justify-md-content-between rounded-1 flex-column flex-md-row">
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">刊登<span
+                                                        class="d-none d-md-inline">時間</span></h5>
+                                                <time class="fs-8 fs-md-7 fw-medium"
+                                                    datetime="2024.10.10">2024.10.10</time>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-md-column justify-content-between w-100 w-md-50 align-items-center align-items-md-start">
+                                                <h5 class="fs-8 text-natural-55 mb-md-3">作品<span
+                                                        class="d-none d-md-inline">售價</span></h5>
+                                                <p class="text-blue-65 fs-8 fs-md-7 fw-bold"><span
+                                                        class="me-1 ">NT$</span>
+                                                    500</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="black-btn">
+                                    <a href="#" class="d-block me-md-1 stretched-link">查看更多</a>
+                                    <span class="material-symbols-outlined">
+                                        chevron_right
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="followTheArtist" role="tabpanel"
+                            aria-labelledby="followTheArtist-tab">
+                            <h3 class="fw-bold fs-6 fs-md-5 mb-4 mb-md-6">關注藝術家</h3>
+                            <div class="row pb-md-7 pb-6 border-bottom border-natural-85 mb-4 mb-md-6">
+                                <div class="col-lg-4 mb-4 mb-lg-0">
+                                    <div class="d-flex h-100">
+                                        <div class="people-head-lg fs-2 fs-md-4 me-2 me-md-4 gill">
+                                            <!-- <img class="object-fit-img" src="../assets/images/avatar/avatar6.png"
+                                                alt="Gill WUUUU"> -->
+                                        </div>
+                                        <div class=" d-flex flex-column mb-2 mb-lg-0">
+                                            <div class="py-2">
+                                                <h4 class="fs-6 fs-md-5 fw-bold mb-3">Gill WUUUU</h4>
+                                                <p class="text-natural-45 fs-8">
+                                                    作品以生動描繪各種貓咪的形態、神態和姿勢著稱。透過細膩的筆觸與柔和的色彩運用，賦予每隻貓咪獨特的性格與情感。</p>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <input type="checkbox" class=" btn-check-1" id="follow-checkbox"
+                                                    autocomplete="off" checked>
+                                                <label class="follow-btn" for="follow-checkbox">
+                                                    <span class="favorite-text">取消關注</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <ul
+                                        class="d-flex flex-nowrap overflow-x-scroll list-unstyled gap-4 gap-md-6 mb-0 follow-card-m">
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product5.png" alt="Gill WUUUU-1">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product2.png" alt="Gill WUUUU-2">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product3.png" alt="Gill WUUUU-3">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product4.png" alt="Gill WUUUU-4">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row pb-md-7 pb-6 border-bottom border-natural-85 mb-4 mb-md-6">
+                                <div class="col-lg-4 mb-4 mb-lg-0">
+                                    <div class="d-flex h-100">
+                                        <div class="people-head-lg fs-2 fs-md-4 me-2 me-md-4 echelon">
+                                            <!-- <img class="object-fit-img" src="../assets/images/avatar/avatar6.png"
+                                                alt="Gill WUUUU"> -->
+                                        </div>
+                                        <div class=" d-flex flex-column mb-2 mb-lg-0">
+                                            <div class="py-2">
+                                                <h4 class="fs-6 fs-md-5 fw-bold mb-3">Echelon</h4>
+                                                <p class="text-natural-45 fs-8">
+                                                    專注於寫實主義風格，通過精湛的技法和敏銳的觀察力，展現出日常生活中細膩且真實的細節。其作品常以自然、人物與城市景象為題材，透過光影和色彩的巧妙運用，創造出具有強烈感染力的畫面。
+                                                </p>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <input type="checkbox" class=" btn-check-1" id="follow-checkbox-2"
+                                                    autocomplete="off" checked>
+                                                <label class="follow-btn" for="follow-checkbox-2">
+                                                    <span class="favorite-text">取消關注</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <ul
+                                        class="d-flex flex-nowrap overflow-x-scroll list-unstyled gap-4 gap-md-6 mb-0 follow-card-m">
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product18.png" alt="Echelon-1">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product11.png" alt="Echelon-2">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product8.png" alt="Echelon-3">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product10.png" alt="Echelon-4">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row pb-md-7 pb-6 mb-4 mb-md-6">
+                                <div class="col-lg-4 mb-4 mb-lg-0">
+                                    <div class="d-flex h-100">
+                                        <div class="people-head-lg fs-2 fs-md-4 me-2 me-md-4 domino">
+                                            <!-- <img class="object-fit-img" src="../assets/images/avatar/avatar6.png"
+                                                alt="Gill WUUUU"> -->
+                                        </div>
+                                        <div class=" d-flex flex-column mb-2 mb-lg-0">
+                                            <div class="py-2">
+                                                <h4 class="fs-6 fs-md-5 fw-bold mb-3">Black Domino</h4>
+                                                <p class="text-natural-45 fs-8">
+                                                    寫實主義畫作以其對人物情感的捕捉聞名。擅長描繪人物的細膩表情和姿態，作品中充滿真實感與細節處理，賦予每一個畫中人物獨特的個性與故事。通過畫筆講述人性的複雜與美好，讓觀眾能夠感同身受，並引發對人類情感的更深入思考。
+                                                </p>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <input type="checkbox" class=" btn-check-1" id="follow-checkbox-3"
+                                                    autocomplete="off" checked>
+                                                <label class="follow-btn" for="follow-checkbox-3">
+                                                    <span class="favorite-text">取消關注</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <ul
+                                        class="d-flex flex-nowrap overflow-x-scroll list-unstyled gap-4 gap-md-6 mb-0 follow-card-m">
+                                        <li>
+                                            <div class="follow-card">
+                                                <img class="object-fit-img"
+                                                    src="../assets/images/carousel/carousel1.png" alt="Black Domino-1">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/carousel/carousel4-1.png"
+                                                    alt="Black Domino-2">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product19.png" alt="Black Domino-3">
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="follow-card">
+                                                <img src="../assets/images/product/product16.png" alt="Black Domino-4">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <%- include('./layout/footer'); -%>
             <script type="module" src="../main.js"></script>
+            <!-- 收藏提示 -->
+            <!-- 引入 jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- 引入 Bootstrap 的 JavaScript -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- 收藏與取消收藏的js主體 -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+                    let currentCheckboxId;
+
+                    document.querySelectorAll('.btn-check').forEach(function (checkbox) {
+                        checkbox.addEventListener('change', function (e) {
+                            if (!this.checked) {
+                                currentCheckboxId = this.id; // 存储当前复选框的 ID
+                                document.getElementById(currentCheckboxId).checked = true; // 阻止复选框取消选中
+                                confirmModal.show(); // 显示模态框
+                            }
+                        });
+                    });
+
+                    // 处理"确定取消"按钮点击事件
+                    document.getElementById('confirmUncheck').addEventListener('click', function () {
+                        if (currentCheckboxId) {
+                            document.getElementById(currentCheckboxId).checked = false; // 取消选中
+                        }
+                        confirmModal.hide(); // 隐藏模态框
+                    });
+                });
+            </script>
+            <!-- 關注與取消關注 -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal-1'));
+                    let currentCheckboxId;
+
+                    // 监听所有复选框的变化事件
+                    document.querySelectorAll('.btn-check-1').forEach(function (checkbox) {
+                        checkbox.addEventListener('change', function (e) {
+                            const associatedLabel = document.querySelector(`label[for="${this.id}"]`);
+                            const btnText = associatedLabel.querySelector('.favorite-text');
+
+                            if (this.checked) {
+                                // 复选框被选中时，改变文本为 "取消關注"
+                                if (btnText) {
+                                    btnText.textContent = '取消關注';
+                                }
+                            } else {
+                                // 复选框未选中时，弹出确认取消收藏的模态框
+                                currentCheckboxId = this.id;
+                                document.getElementById(currentCheckboxId).checked = true; // 暂时阻止取消选中
+                                confirmModal.show(); // 显示模态框
+                            }
+                        });
+                    });
+
+                    // 处理"确定取消"按钮点击事件
+                    document.getElementById('confirmUncheck-1').addEventListener('click', function () {
+                        if (currentCheckboxId) {
+                            const checkbox = document.getElementById(currentCheckboxId);
+                            checkbox.checked = false; // 取消选中
+
+                            // 查找关联的按钮并更改文本为 "關注"
+                            const associatedLabel = document.querySelector(`label[for="${currentCheckboxId}"]`);
+                            const btnText = associatedLabel.querySelector('.favorite-text');
+                            if (btnText) {
+                                btnText.textContent = '關注'; // 更新按钮文本为 "關注"
+                            }
+                        }
+                        confirmModal.hide(); // 隐藏模态框
+                    });
+                });
+            </script>
+
+
 </body>
 
 </html>

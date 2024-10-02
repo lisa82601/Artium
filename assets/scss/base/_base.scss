@@ -5,27 +5,36 @@
 
 .homepage {
     @media (min-width: 1400px) {
-      $container-max-width: 1856px; // 設置最大寬度
+      $container-max-width: 1920px; // 設置最大寬度
       $grid-gutter-width: 24px; // gutter 寬度
-      padding-left: 32px;
-      padding-right: 32px;
     }
+    @media (min-width: 1920px) {
+        $container-max-width: 1920px; // 設置最大寬度
+        min-width: 1920px;
+        $grid-gutter-width: 24px; // gutter 寬度
+        padding-left: 32px;
+        padding-right: 32px;
+      }
 }
 
 .inner-page {
     @media (min-width: 1400px) {
-      $container-max-width: 1296px; // 設置內頁最大寬度
-      $grid-gutter-width: 24px; // gutter 寬度
-      padding-left: 312px; // margin
-      padding-right: 312px;
-    }
-}
-.inner-page-md {
-    @media (max-width: 1920px) {
-      max-width: 1296px;
+      $container-max-width: 1360px; // 設置內頁最大寬度
+      max-width: 1360px;
+      min-width: 1360px;
       $grid-gutter-width: 24px; // gutter 寬度
       padding-left: 32px; // margin
       padding-right: 32px;
+    }
+    
+}
+
+.inner-page-md {
+    @media (min-width: 1920px) {
+      min-width: 1920px;
+      $grid-gutter-width: 24px; // gutter 寬度
+      padding-left: 312px; // margin
+      padding-right: 312px;
     }
 }
  
