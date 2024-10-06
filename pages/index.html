@@ -11,44 +11,100 @@
 </head>
 
 <body>
-  <%- include('./layout/header'); -%>
+  <%- include('./layout/header'); %>
 
-    <h1 class="index-title">測試更改首頁標題</h1>
+<!-- 第一區塊：hero，排行版介紹 -->
+<section class="hero">
+  <!-- Radio Buttons for Gallery Selection -->
+  <input type="radio" id="art1" name="artwork" checked />
+  <input type="radio" id="art2" name="artwork" />
+  <input type="radio" id="art3" name="artwork" />
+  <input type="radio" id="art4" name="artwork" />
+  <input type="radio" id="art5" name="artwork" />
 
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
-      </div>
+  <!-- Background Image Display -->
+  <div class="hero-background"></div>
+
+  <!-- Main Image Display -->
+  <div class="hero-main-image"></div>
+
+  <!-- Artwork Table -->
+  <div class="artwork-table">
+    <table>
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>作品集</th>
+          <th>價格</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <label for="art1">
+              <img src="/assets/images/hero/hero1.png" class="thumbnail" alt="Virtual dark souls" />
+              Virtual dark souls
+            </label>
+          </td>
+          <td>100 NTD</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <label for="art2">
+              <img src="/assets/images/hero/hero2.png" class="thumbnail" alt="Light illusion with gradient y2k" />
+              Light illusion with gradient y2k
+            </label>
+          </td>
+          <td>120 NTD</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <label for="art3">
+              <img src="/assets/images/hero/hero3.png" class="thumbnail" alt="Labyrinth Permanent Resident" />
+              Labyrinth Permanent Resident
+            </label>
+          </td>
+          <td>80 NTD</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <label for="art4">
+              <img src="/assets/images/hero/hero4.png" class="thumbnail" alt="可愛さは正義" />
+              可愛さは正義
+            </label>
+          </td>
+          <td>1,000 NTD</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <label for="art5">
+              <img src="/assets/images/hero/hero5.png" class="thumbnail" alt="California cherry flavor" />
+              California cherry flavor
+            </label>
+          </td>
+          <td>500 NTD</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- 第二區塊輪播文字 -->
+  <div class="marquee">
+    <div>
+      <span>ARTIUM ✶ Discover art with real value ✶ ARTIUM ✶ Discover art with real value  </span>
     </div>
+  </div>
 
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
 
-    <!-- Modal 元件 -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <%- include('./layout/footer'); -%>
+  <%- include('./layout/footer'); %>
 
       <script type="module" src="../main.js"></script>
 </body>

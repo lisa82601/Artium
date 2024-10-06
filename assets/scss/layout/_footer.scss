@@ -1,4 +1,68 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+.footer {
+  position: relative; // 讓內部的裝飾圖以 footer 作為定位參考
+  background-color: #222; // 背景色設定
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: center; // 讓中間內容居中
+    align-items: center;
+  }
+
+  .footer-decoration {
+    position: absolute;
+    top: 0;
+    width: 6%; // 調整裝飾圖的寬度，避免過大
+    height: 100%; // 高度等於 footer 的整體高度
+    opacity: 0.3;
+
+    &.left {
+      left: 0px; // 負邊距貼齊左邊
+    }
+
+    &.right {
+      right: 0px; // 負邊距貼齊右邊
+      transform: scaleX(-1); // 左右翻轉圖像
+    }
+
+    img {
+      width: 100%; // 填滿容器寬度
+      height: 100%; // 填滿容器高度
+      object-fit: cover; // 圖像保持比例
+    }
+  }
+
+  .footer-content {
+    text-align: center;
+
+    .footer-logo {
+      margin-bottom: 15px;
+
+      img {
+        height: 40px; // Logo 高度
+        width: auto; // 保持比例
+      }
+    }
+
+    .footer-links {
+      p {
+        margin-bottom: 5px; // 與鏈接之間的間距
+        font-size: 0.875rem; // 字體大小
+        color: #ccc;
+      }
+
+      nav {
+        a {
+          color: #ccc;
+          margin: 0 15px; // 連結之間的距離改為 `margin` 控制，移除 `|`
+          text-decoration: none;
+          transition: color 0.3s ease; // 顏色過渡效果
+
+          &:hover {
+            color: #fff; // 滑鼠懸浮時的顏色
+          }
+        }
+      }
+    }
+  }
 }

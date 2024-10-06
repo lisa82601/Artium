@@ -1,4 +1,41 @@
-<a href="index.html">ARITIUM</a>
-<a href="about.html">排行榜</a>
-<a href="contact.html">創作者</a>
-<a href="contact.html">藝術類型</a>
+<head>
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
+  
+<header class="site-header">
+    <!-- 左側 Navigation 區域 -->
+    <div class="container navigation">
+      <div class="logo">
+        <img src="/assets/images/logo_desktop.svg" alt="ARTIUM logo" class="logo-image" />
+      </div>
+      <div class="main-nav">
+        <ul>
+          <li><a href="#">排行榜</a></li>
+          <li><a href="#">創作者</a></li>
+          <li>
+            <a href="#">藝術類別 <i class="bi bi-chevron-down"></i></a>
+            <!-- <ul class="dropdown-menu">
+              子項目可以在這裡填入 
+            </ul>-->
+          </li>
+          <li>
+            <button class="search-button"><i class="bi bi-search"></i></button>
+            <input type="text" placeholder="搜尋藝術家或作品" class="search-bar"/>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 右側 Status 區域 -->
+    <div class="status">
+      <div class="user-options">
+        <div class="cart">
+          <a href="#"><i class="bi bi-cart3"></i></a>
+        </div>
+        <a href="#" class="login-button">登入</a>
+        <a href="#" class="register-button">註冊 <i class="bi bi-chevron-right"></i></a>
+      </div>
+    </div>
+  </header>
+  

@@ -1,3 +1,162 @@
-.index-title {
-  font-size: 100px;
+/* Hero 區塊樣式 */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px; 
+}
+
+/* 隱藏所有的 radio 按鈕 */
+input[type="radio"] {
+  display: none; 
+}
+/* 背景圖設定及模糊效果 */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(80px);
+  z-index: -1; /* 設置背景圖在其他元素後面 */
+  transition: background 0.5s ease;
+}
+
+/* 主圖片顯示樣式 */
+.hero-main-image {
+  width: 60%;
+  max-width: 979px; /* 最大寬度限制 */
+  height: 520px; /* 最大高度限制 */
+  background-size: cover;
+  background-position: center;
+  transition: background 0.5s ease;
+  border-radius: 15px;
+}
+
+/* Artwork 表格區域樣式 */
+.artwork-table {
+  width: 40%;
+  max-width: 693px; /* 使用百分比寬度，與左側圖片對齊 */
+  height: 520px; /* 限制表格區域寬度 */
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.artwork-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.artwork-table th, .artwork-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.artwork-table th {
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.artwork-table td {
+  font-size: 16px;
+}
+
+.artwork-table tbody tr {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.artwork-table tbody tr:hover {
+  background: #f0f0f0;
+}
+
+.artwork-table .selected {
+  background: #fdebd3;
+}
+
+.artwork-table .thumbnail {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+/* 當 radio 被選中時，變更對應的 .hero 背景及主圖片 */
+#art2:checked ~ .hero-background,
+#art2:checked ~ .hero-main-image {
+  background-image: url('/assets/images/hero/hero2.png');
+}
+
+#art3:checked ~ .hero-background,
+#art3:checked ~ .hero-main-image {
+  background-image: url('/assets/images/hero/hero3.png');
+}
+
+#art4:checked ~ .hero-background,
+#art4:checked ~ .hero-main-image {
+  background-image: url('/assets/images/hero/hero4.png');
+}
+
+#art5:checked ~ .hero-background,
+#art5:checked ~ .hero-main-image {
+  background-image: url('/assets/images/hero/hero5.png');
+}
+
+/* 當 radio 被選中時，變更對應的主圖片背景圖 */
+#art1:checked ~ .hero-background,
+#art1:checked ~ .hero-main-image {
+  background-image: url('/assets/images/hero/hero1.png');
+}
+
+.hero::before,
+.hero::after {
+  content: none; /* 取消偽元素內容 */
+  display: none; /* 隱藏偽元素 */
+}
+
+
+
+/* 第二區塊 */
+.marquee {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 400px;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 10s linear infinite;
+}
+
+.marquee span {
+  float: left;
+/*   width: 50%; */
+  font-size: 120px;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
 }
